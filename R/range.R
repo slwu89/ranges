@@ -97,14 +97,11 @@ add_range <- function(lo, hi, mult = 8, exclude_zero = FALSE) {
 
   dst <- lo
 
-  # Handle lo == hi as a special case, so we then know
-  # lo < hi and so it is safe to add 1 to lo and subtract 1
-  # from hi without falling outside of the range of ints.
+  # special cases
   if (lo == hi) {
     return(dst)
   }
 
-  # ensure that lo_inner <= hi_inner below
   if (lo + 1L == hi) {
     dst <- c(dst, hi)
     return(dst)
