@@ -84,6 +84,10 @@
 <li><a href="https://cran.r-project.org/package=rbenchmark">rbenchmark</a></li>
 </ul>
 <p>Currently the available ranges are designed to replicate the range behavior from the <a href="https://github.com/google/benchmark">Google Benchmark C++ library</a>.</p>
+<p>The main function to interact with now is <code>create_range_log</code>, which reproduces the <code>Range</code> behavior of benchmark (<a href="https://github.com/google/benchmark/blob/main/docs/user_guide.md#passing-arguments">see here</a>).</p>
+<p><code>BENCHMARK(BM_memcpy)-&gt;RangeMultiplier(2)-&gt;Range(8, 8&lt;&lt;10);</code> can be specified with “ranges” by:</p>
+<pre><code>&gt; ranges::create_range_log(lo = 8, hi = bitwShiftL(a = 8, n = 10), mult = 2)
+ [1]    8   16   32   64  128  256  512 1024 2048 4096 8192</code></pre>
 </div>
   </div>
 

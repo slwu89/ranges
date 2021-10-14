@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • ranges</title>
+<title>Create a logarithmic range of integers — create_range_log • ranges</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,13 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Create a logarithmic range of integers — create_range_log" />
+<meta property="og:description" content="Create a range from the powers of mult on the closed interval [lo, hi].
+The endpoints are included, even if they are not multiples of mult. The range
+may go from negative to positive values if requested.
+This function works on integer sequences, so if an interval is requested outside of
+the maximum representable range of integers \([-(2^{31} - 1), 2^{31} - 1]\) it
+will throw an error." />
 
 
 
@@ -58,7 +64,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -108,54 +114,50 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Create a logarithmic range of integers</h1>
+    <small class="dont-index">Source: <a href='https://github.com/slwu89/ranges/blob/master/R/range.R'><code>R/range.R</code></a></small>
+    <div class="hidden name"><code>create_range_log.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Create a range from the powers of <code>mult</code> on the closed interval [<code>lo</code>, <code>hi</code>].
+The endpoints are included, even if they are not multiples of <code>mult</code>. The range
+may go from negative to positive values if requested.
+This function works on integer sequences, so if an interval is requested outside of
+the maximum representable range of integers \([-(2^{31} - 1), 2^{31} - 1]\) it
+will throw an error.</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>create_range_log</span><span class='op'>(</span><span class='va'>lo</span>, <span class='va'>hi</span>, mult <span class='op'>=</span> <span class='fl'>8</span>, exclude_zero <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="add_negated_powers.html">add_negated_powers()</a></code> </p>
-        </td>
-        <td><p>Create a sequence of negative powers on a closed interval</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="add_powers.html">add_powers()</a></code> </p>
-        </td>
-        <td><p>Append the powers of <code>mult</code> in the closed interval [<code>lo</code>, <code>hi</code>]</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="create_range_log.html">create_range_log()</a></code> </p>
-        </td>
-        <td><p>Create a logarithmic range of integers</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>lo</th>
+      <td><p>bottom of the interval</p></td>
+    </tr>
+    <tr>
+      <th>hi</th>
+      <td><p>top of the interval</p></td>
+    </tr>
+    <tr>
+      <th>mult</th>
+      <td><p>multiplier</p></td>
+    </tr>
+    <tr>
+      <th>exclude_zero</th>
+      <td><p>include <code>0</code> in the interval or not</p></td>
+    </tr>
     </table>
-  </div>
 
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>add_range</span><span class='op'>(</span>lo <span class='op'>=</span> <span class='fl'>8</span>, hi <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/bitwise.html'>bitwShiftL</a></span><span class='op'>(</span>a <span class='op'>=</span> <span class='fl'>8</span>, n <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span>, mult <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='error'>Error in add_range(lo = 8, hi = bitwShiftL(a = 8, n = 10), mult = 2): could not find function "add_range"</span></div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
