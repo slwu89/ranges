@@ -20,6 +20,10 @@ an \code{integer} vector
 Calls \link{add_powers} to produce sequences of negative powers. This
 function will only produce sequences of negative integers.
 }
+\note{
+This is not intended to be called directly by users, but it is exported
+in case it is useful to be imported into another package.
+}
 \examples{
 add_negated_powers(lo = -bitwShiftL(a = 8, n = 10), hi = -8, mult = 8)
 }

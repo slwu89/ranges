@@ -13,3 +13,6 @@ and is designed to be used to generate input for benchmarking packages like:
   * [bench](https://bench.r-lib.org/)
   * [microbenchmark](https://cran.r-project.org/package=microbenchmark)
   * [rbenchmark](https://cran.r-project.org/package=rbenchmark)
+
+Currently the available ranges are designed to replicate the range behavior from
+the [Google Benchmark C++ library](https://github.com/google/benchmark).

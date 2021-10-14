@@ -11,6 +11,8 @@
 #' This function works on integer sequences, so if an interval is requested outside of
 #' the maximum representable range of integers \eqn{[-(2^{31} - 1), 2^{31} - 1]} it
 #' will throw an error. This function will only produce sequences of positive integers.
+#' @note This is not intended to be called directly by users, but it is exported
+#' in case it is useful to be imported into another package.
 #' @param lo bottom of the interval
 #' @param hi top of the interval
 #' @param mult multiplier
@@ -45,6 +47,8 @@ add_powers <- function(lo, hi, mult = 8) {
 #' @title Create a sequence of negative powers on a closed interval
 #' @description Calls [add_powers] to produce sequences of negative powers. This
 #' function will only produce sequences of negative integers.
+#' @note This is not intended to be called directly by users, but it is exported
+#' in case it is useful to be imported into another package.
 #' @param lo bottom of the interval
 #' @param hi top of the interval
 #' @param mult multiplier

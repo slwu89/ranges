@@ -22,6 +22,10 @@ This function works on integer sequences, so if an interval is requested outside
 the maximum representable range of integers \eqn{[-(2^{31} - 1), 2^{31} - 1]} it
 will throw an error. This function will only produce sequences of positive integers.
 }
+\note{
+This is not intended to be called directly by users, but it is exported
+in case it is useful to be imported into another package.
+}
 \examples{
 add_powers(lo = 8, hi = bitwShiftL(a = 8, n = 10))
 }

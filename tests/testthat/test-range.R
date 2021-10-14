@@ -1,4 +1,4 @@
-test_that("add_powers correctly makes ranges", {
+test_that("add_powers correctly makes positive ranges", {
   # basic range generation
   expect_equal(add_powers(lo = 8, hi = bitwShiftL(a = 8, n = 10), mult = 8), 8^(1:4))
   expect_equal(add_powers(lo = 8, hi = bitwShiftL(a = 8, n = 10), mult = 2), 8*(2^(0:10)))
@@ -47,3 +47,17 @@ test_that("add_powers errors for bad input", {
     expect_warning()
 })
 
+
+test_that("add_negated_powers correctly makes negative ranges", {
+  # basic range generation
+  expect_equal(add_negated_powers(lo = -bitwShiftL(a = 8, n = 10), hi = -8, mult = 8), -8^c(4,3,2,1))
+  expect_equal(add_negated_powers(lo = -bitwShiftL(a = 8, n = 10), hi = -8, mult = 2), -8*(2^(10:0)))
+  expect_equal(add_negated_powers(lo = -bitwShiftL(a = 8, n = 10), hi = 0, mult = 2), -2^(13:0))
+  expect_equal(add_negated_powers(lo = -100, hi = -2, mult = 3), -3^(4:1))
+
+  # things are floor-d
+  expect_equal(
+    add_negated_powers(lo = -1e3, hi = -10, mult = 10),
+    add_negated_powers(lo = -1e3, hi = -10, mult = 10.9)
+  )
+})
