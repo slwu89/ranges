@@ -1,5 +1,5 @@
 Package: ranges
-Title: Provide methods to generate argument ranges for benchmarking.
+Title: Provide methods to generate argument ranges for benchmarking
 Version: 0.0.1
 Authors@R: 
     c(person(given = "Sean L.",
@@ -11,7 +11,7 @@ Description: Gives users tools to Make integer ranges for benchmarking algorithm
   scientific computing, that need to be tested on arguments ranging over several
   orders of magnitude. It can generate dense (linear) or sparse (logarithmic) ranges
   and is designed to be used to generate input for benchmarking packages.
-License: MIT
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
