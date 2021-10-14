@@ -16,3 +16,14 @@ and is designed to be used to generate input for benchmarking packages like:
 
 Currently the available ranges are designed to replicate the range behavior from
 the [Google Benchmark C++ library](https://github.com/google/benchmark).
+
+The main function to interact with now is `create_range_log`, which reproduces
+the `Range` behavior of benchmark ([see here](https://github.com/google/benchmark/blob/main/docs/user_guide.md#passing-arguments)).
+
+`BENCHMARK(BM_memcpy)->RangeMultiplier(2)->Range(8, 8<<10);` can be specified with
+"ranges" by:
+
+```
+> ranges::create_range_log(lo = 8, hi = bitwShiftL(a = 8, n = 10), mult = 2)
+ [1]    8   16   32   64  128  256  512 1024 2048 4096 8192
+```
