@@ -1,6 +1,6 @@
 # ranges
 
-Gives users tools to Make integer ranges for benchmarking algorithms, especially for numerical or 
+Gives users tools to make integer ranges for benchmarking algorithms, especially for numerical or 
 scientific computing, that need to be tested on arguments ranging over several
 orders of magnitude. It can generate dense (linear) or sparse (logarithmic) ranges
 and is designed to be used to generate input for benchmarking packages like:
