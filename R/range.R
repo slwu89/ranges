@@ -9,7 +9,7 @@
 #' @title Append the powers of `mult` in the closed interval \[`lo`, `hi`\]
 #' @description Generate a sequence consisting of the powers of `mult` on the closed interval \[`lo`, `hi`\].
 #' This function works on integer sequences, so if an interval is requested outside of
-#' the maximum representable range of integers \eqn{[-(2^31 - 1), 2^31 - 1]} it
+#' the maximum representable range of integers \eqn{[-(2^{31} - 1), 2^{31} - 1]} it
 #' will throw an error. This function will only produce sequences of positive integers.
 #' @param lo bottom of the interval
 #' @param hi top of the interval
@@ -80,6 +80,9 @@ add_negated_powers <- function(lo, hi, mult = 8) {
 #' @description Create a range from the powers of `mult` on the closed interval \[`lo`, `hi`\].
 #' The endpoints are included, even if they are not multiples of `mult`. The range
 #' may go from negative to positive values if requested.
+#' This function works on integer sequences, so if an interval is requested outside of
+#' the maximum representable range of integers \eqn{[-(2^{31} - 1), 2^{31} - 1]} it
+#' will throw an error.
 #' @param lo bottom of the interval
 #' @param hi top of the interval
 #' @param mult multiplier

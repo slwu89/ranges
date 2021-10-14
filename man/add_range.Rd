@@ -19,6 +19,9 @@ add_range(lo, hi, mult = 8, exclude_zero = FALSE)
 Create a range from the powers of \code{mult} on the closed interval [\code{lo}, \code{hi}].
 The endpoints are included, even if they are not multiples of \code{mult}. The range
 may go from negative to positive values if requested.
+This function works on integer sequences, so if an interval is requested outside of
+the maximum representable range of integers \eqn{[-(2^{31} - 1), 2^{31} - 1]} it
+will throw an error.
 }
 \examples{
 add_range(lo = 8, hi = bitwShiftL(a = 8, n = 10), mult = 2)

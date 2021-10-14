@@ -19,7 +19,7 @@ an \code{integer} vector
 \description{
 Generate a sequence consisting of the powers of \code{mult} on the closed interval [\code{lo}, \code{hi}].
 This function works on integer sequences, so if an interval is requested outside of
-the maximum representable range of integers \eqn{[-(2^31 - 1), 2^31 - 1]} it
+the maximum representable range of integers \eqn{[-(2^{31} - 1), 2^{31} - 1]} it
 will throw an error. This function will only produce sequences of positive integers.
 }
 \examples{
