@@ -96,7 +96,7 @@ add_negated_powers <- function(lo, hi, mult = 8) {
 #' @param exclude_zero include `0` in the interval or not
 #' @examples add_range(lo = 8, hi = bitwShiftL(a = 8, n = 10), mult = 2)
 #' @export
-add_range <- function(lo, hi, mult = 8, exclude_zero = FALSE) {
+create_range_log <- function(lo, hi, mult = 8, exclude_zero = FALSE) {
 
   stopifnot(length(c(lo, hi, mult)) == 3)
   stopifnot(all(is.finite(c(lo, hi, mult))))
