@@ -42,7 +42,10 @@
 <meta property="og:title" content="Create a logarithmic range of integers — add_range" />
 <meta property="og:description" content="Create a range from the powers of mult on the closed interval [lo, hi].
 The endpoints are included, even if they are not multiples of mult. The range
-may go from negative to positive values if requested." />
+may go from negative to positive values if requested.
+This function works on integer sequences, so if an interval is requested outside of
+the maximum representable range of integers \([-(2^{31} - 1), 2^{31} - 1]\) it
+will throw an error." />
 
 
 
@@ -121,7 +124,10 @@ may go from negative to positive values if requested." />
     <div class="ref-description">
     <p>Create a range from the powers of <code>mult</code> on the closed interval [<code>lo</code>, <code>hi</code>].
 The endpoints are included, even if they are not multiples of <code>mult</code>. The range
-may go from negative to positive values if requested.</p>
+may go from negative to positive values if requested.
+This function works on integer sequences, so if an interval is requested outside of
+the maximum representable range of integers \([-(2^{31} - 1), 2^{31} - 1]\) it
+will throw an error.</p>
     </div>
 
     <pre class="usage"><span class='fu'>add_range</span><span class='op'>(</span><span class='va'>lo</span>, <span class='va'>hi</span>, mult <span class='op'>=</span> <span class='fl'>8</span>, exclude_zero <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>

@@ -75,12 +75,15 @@
 <div id="ranges" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#ranges" class="anchor"></a>ranges</h1></div>
-<p>Gives users tools to Make integer ranges for benchmarking algorithms, especially for numerical or scientific computing, that need to be tested on arguments ranging over several orders of magnitude. It can generate dense (linear) or sparse (logarithmic) ranges and is designed to be used to generate input for benchmarking packages like:</p>
+<!-- badges: start -->
+
+<p>Gives users tools to make integer ranges for benchmarking algorithms, especially for numerical or scientific computing, that need to be tested on arguments ranging over several orders of magnitude. It can generate dense (linear) or sparse (logarithmic) ranges and is designed to be used to generate input for benchmarking packages like:</p>
 <ul>
 <li><a href="https://bench.r-lib.org/">bench</a></li>
 <li><a href="https://cran.r-project.org/package=microbenchmark">microbenchmark</a></li>
 <li><a href="https://cran.r-project.org/package=rbenchmark">rbenchmark</a></li>
 </ul>
+<p>Currently the available ranges are designed to replicate the range behavior from the <a href="https://github.com/google/benchmark">Google Benchmark C++ library</a>.</p>
 </div>
   </div>
 
@@ -107,7 +110,14 @@
 </ul>
 </div>
 
-  </div>
+  <div class="dev-status">
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/slwu89/ranges/actions"><img src="https://github.com/slwu89/ranges/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://codecov.io/gh/slwu89/ranges?branch=main"><img src="https://codecov.io/gh/slwu89/ranges/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
+</ul>
+</div>
+</div>
 </div>
 
 

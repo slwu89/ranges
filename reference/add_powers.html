@@ -42,7 +42,7 @@
 <meta property="og:title" content="Append the powers of mult in the closed interval [lo, hi] — add_powers" />
 <meta property="og:description" content="Generate a sequence consisting of the powers of mult on the closed interval [lo, hi].
 This function works on integer sequences, so if an interval is requested outside of
-the maximum representable range of integers \([-(2^31 - 1), 2^31 - 1]\) it
+the maximum representable range of integers \([-(2^{31} - 1), 2^{31} - 1]\) it
 will throw an error. This function will only produce sequences of positive integers." />
 
 
@@ -122,7 +122,7 @@ will throw an error. This function will only produce sequences of positive integ
     <div class="ref-description">
     <p>Generate a sequence consisting of the powers of <code>mult</code> on the closed interval [<code>lo</code>, <code>hi</code>].
 This function works on integer sequences, so if an interval is requested outside of
-the maximum representable range of integers \([-(2^31 - 1), 2^31 - 1]\) it
+the maximum representable range of integers \([-(2^{31} - 1), 2^{31} - 1]\) it
 will throw an error. This function will only produce sequences of positive integers.</p>
     </div>
 
@@ -148,6 +148,10 @@ will throw an error. This function will only produce sequences of positive integ
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>an <code>integer</code> vector</p>
+    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
+
+    <p>This is not intended to be called directly by users, but it is exported
+in case it is useful to be imported into another package.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>add_powers</span><span class='op'>(</span>lo <span class='op'>=</span> <span class='fl'>8</span>, hi <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/bitwise.html'>bitwShiftL</a></span><span class='op'>(</span>a <span class='op'>=</span> <span class='fl'>8</span>, n <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span><span class='op'>)</span>
