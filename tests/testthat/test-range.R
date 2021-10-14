@@ -61,3 +61,38 @@ test_that("add_negated_powers correctly makes negative ranges", {
     add_negated_powers(lo = -1e3, hi = -10, mult = 10.9)
   )
 })
+
+test_that("add_negated_powers errors for bad input", {
+  # bad mult
+  expect_error(add_negated_powers(lo = -bitwShiftL(a = 8, n = 10), hi = -8, mult = -1))
+  expect_error(add_negated_powers(lo = -bitwShiftL(a = 8, n = 10), mult = 1))
+  expect_error(add_negated_powers(lo = -bitwShiftL(a = 8, n = 10), mult = 0))
+  expect_error(add_negated_powers(lo = -bitwShiftL(a = 8, n = 10), mult = Inf))
+  expect_error(add_negated_powers(lo = -bitwShiftL(a = 8, n = 10), mult = -Inf))
+  expect_error(add_negated_powers(lo = -bitwShiftL(a = 8, n = 10), mult = NULL))
+  expect_error(add_negated_powers(lo = -bitwShiftL(a = 8, n = 10), mult = NA))
+  expect_error(add_negated_powers(lo = -bitwShiftL(a = 8, n = 10), mult = NaN))
+
+  # bad lo
+  expect_error(add_negated_powers(lo = -6, hi = -8, mult = 2))
+  expect_error(add_negated_powers(lo = 0, hi = -8, mult = 2))
+  expect_error(add_negated_powers(lo = -Inf, hi = -8, mult = 2))
+  expect_error(add_negated_powers(lo = Inf, hi = -8, mult = 2))
+  expect_error(add_negated_powers(lo = NULL, hi = -8, mult = 2))
+  expect_error(add_negated_powers(lo = NA, hi = -8, mult = 2))
+  expect_error(add_negated_powers(lo = NaN, hi = -8, mult = 2))
+
+  # bad hi
+  expect_error(add_negated_powers(lo = -bitwShiftL(a = 8, n = 10), hi = 1, mult = 2))
+  expect_error(add_negated_powers(lo = -bitwShiftL(a = 8, n = 10), hi = Inf, mult = 2))
+  expect_error(add_negated_powers(lo = -bitwShiftL(a = 8, n = 10), hi = -Inf, mult = 2))
+  expect_error(add_negated_powers(lo = -bitwShiftL(a = 8, n = 10), hi = -bitwShiftL(a = 8, n = 11), mult = 2))
+  expect_error(add_negated_powers(lo = -bitwShiftL(a = 8, n = 10), hi = NULL, mult = 2))
+  expect_error(add_negated_powers(lo = -bitwShiftL(a = 8, n = 10), hi = NaN, mult = 2))
+  expect_error(add_negated_powers(lo = -bitwShiftL(a = 8, n = 10), hi = NA, mult = 2))
+
+  # out of integer range (error from stopifnot(hi >= lo), warning from as.integer(2^31))
+  add_negated_powers(lo = -(2^31), hi = -2, mult = 2) %>%
+    expect_error() %>%
+    expect_warning()
+})
