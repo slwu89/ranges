@@ -7,9 +7,14 @@ Authors@R:
            role = c("aut", "cre"),
            email = "slwood89@gmail.com",
            comment = c(ORCID = "0000-0002-5781-9493")))
-Description: What the package does (one paragraph).
+Description: Gives users tools to Make integer ranges for benchmarking algorithms, especially for numerical or 
+  scientific computing, that need to be tested on arguments ranging over several
+  orders of magnitude. It can generate dense (linear) or sparse (logarithmic) ranges
+  and is designed to be used to generate input for benchmarking packages.
 License: MIT
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+URL: https://github.com/slwu89/ranges, https://slwu89.github.io/ranges/index.html
+BugReports: https://github.com/slwu89/ranges/issues
