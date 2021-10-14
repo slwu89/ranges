@@ -38,10 +38,6 @@ add_powers <- function(lo, hi, mult = 8) {
   end <- floor(log(base = mult, x = hi))
   dst <- mult^(start:end)
 
-  if (any(dst > kmax)) {
-    stop("some elements of generated range larger than greatest representable integer!")
-  }
-
   return(as.integer(dst))
 }
 

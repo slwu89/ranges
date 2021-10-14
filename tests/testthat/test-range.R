@@ -40,5 +40,10 @@ test_that("add_powers errors for bad input", {
   expect_error(add_powers(lo = 8, hi = NULL, mult = 0))
   expect_error(add_powers(lo = 8, hi = NaN, mult = 0))
   expect_error(add_powers(lo = 8, hi = NA, mult = 0))
+
+  # out of integer range (error from stopifnot(hi >= lo), warning from as.integer(2^31))
+  add_powers(lo = 2, hi = (2^31), mult = 2) %>%
+    expect_error() %>%
+    expect_warning()
 })
 
