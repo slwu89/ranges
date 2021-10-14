@@ -2,6 +2,7 @@
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/slwu89/ranges/workflows/R-CMD-check/badge.svg)](https://github.com/slwu89/ranges/actions)
+[![test-coverage](https://github.com/slwu89/ranges/workflows/test-coverage/badge.svg)](https://github.com/slwu89/ranges/actions)
 <!-- badges: end -->
 
 Gives users tools to make integer ranges for benchmarking algorithms, especially for numerical or 

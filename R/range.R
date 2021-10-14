@@ -19,6 +19,9 @@
 #' @export
 add_powers <- function(lo, hi, mult = 8) {
 
+  stopifnot(length(c(lo, hi, mult)) == 3)
+  stopifnot(all(is.finite(c(lo, hi, mult))))
+
   lo <- as.integer(lo)
   hi <- as.integer(hi)
   mult <- as.integer(mult)
@@ -30,7 +33,8 @@ add_powers <- function(lo, hi, mult = 8) {
   kmax <- .Machine$integer.max
 
   # space out the values in multiples of mult, to get from lo to hi.
-  start <- ceiling(log(base = mult, x = lo))
+  # max(lo,1) in case lo=0, we still want to make a range from 1 in that case
+  start <- ceiling(log(base = mult, x = max(lo, 1L)))
   end <- floor(log(base = mult, x = hi))
   dst <- mult^(start:end)
 
@@ -52,6 +56,9 @@ add_powers <- function(lo, hi, mult = 8) {
 #' @examples add_negated_powers(lo = -bitwShiftL(a = 8, n = 10), hi = -8, mult = 8)
 #' @export
 add_negated_powers <- function(lo, hi, mult = 8) {
+
+  stopifnot(length(c(lo, hi, mult)) == 3)
+  stopifnot(all(is.finite(c(lo, hi, mult))))
 
   lo <- as.integer(lo)
   hi <- as.integer(hi)
@@ -90,6 +97,9 @@ add_negated_powers <- function(lo, hi, mult = 8) {
 #' @examples add_range(lo = 8, hi = bitwShiftL(a = 8, n = 10), mult = 2)
 #' @export
 add_range <- function(lo, hi, mult = 8, exclude_zero = FALSE) {
+
+  stopifnot(length(c(lo, hi, mult)) == 3)
+  stopifnot(all(is.finite(c(lo, hi, mult))))
 
   lo <- as.integer(lo)
   hi <- as.integer(hi)
