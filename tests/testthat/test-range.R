@@ -47,7 +47,6 @@ test_that("add_powers errors for bad input", {
     expect_warning()
 })
 
-
 test_that("add_negated_powers correctly makes negative ranges", {
   # basic range generation
   expect_equal(add_negated_powers(lo = -bitwShiftL(a = 8, n = 10), hi = -8, mult = 8), -8^c(4,3,2,1))
