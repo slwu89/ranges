@@ -24,5 +24,5 @@ the maximum representable range of integers \eqn{[-(2^{31} - 1), 2^{31} - 1]} it
 will throw an error.
 }
 \examples{
-add_range(lo = 8, hi = bitwShiftL(a = 8, n = 10), mult = 2)
+create_range_log(lo = 8, hi = bitwShiftL(a = 8, n = 10), mult = 2)
 }

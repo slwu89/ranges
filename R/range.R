@@ -94,7 +94,7 @@ add_negated_powers <- function(lo, hi, mult = 8) {
 #' @param hi top of the interval
 #' @param mult multiplier
 #' @param exclude_zero include `0` in the interval or not
-#' @examples add_range(lo = 8, hi = bitwShiftL(a = 8, n = 10), mult = 2)
+#' @examples create_range_log(lo = 8, hi = bitwShiftL(a = 8, n = 10), mult = 2)
 #' @export
 create_range_log <- function(lo, hi, mult = 8, exclude_zero = FALSE) {
 
