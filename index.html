@@ -14,7 +14,7 @@
 <script src="pkgdown.js"></script><meta property="og:title" content="Provide methods to generate argument ranges for benchmarking">
 <meta property="og:description" content="Gives users tools to Make integer ranges for benchmarking algorithms, especially for numerical or 
   scientific computing, that need to be tested on arguments ranging over several
-  orders of magnitude. It can generate dense (linear) or sparse (logarithmic) ranges
+  orders of magnitude. It can generate dense (linear) or sparse (exponential) ranges
   and is designed to be used to generate input for benchmarking packages.">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -77,16 +77,16 @@
 <a href="#ranges" class="anchor"></a>ranges</h1></div>
 <!-- badges: start -->
 
-<p>Gives users tools to make integer ranges for benchmarking algorithms, especially for numerical or scientific computing, that need to be tested on arguments ranging over several orders of magnitude. It can generate dense (linear) or sparse (logarithmic) ranges and is designed to be used to generate input for benchmarking packages like:</p>
+<p>Gives users tools to make integer ranges for benchmarking algorithms, especially for numerical or scientific computing, that need to be tested on arguments ranging over several orders of magnitude. It can generate dense (linear) or sparse (exponential) ranges and is designed to be used to generate input for benchmarking packages like:</p>
 <ul>
 <li><a href="https://bench.r-lib.org/">bench</a></li>
 <li><a href="https://cran.r-project.org/package=microbenchmark">microbenchmark</a></li>
 <li><a href="https://cran.r-project.org/package=rbenchmark">rbenchmark</a></li>
 </ul>
 <p>Currently the available ranges are designed to replicate the range behavior from the <a href="https://github.com/google/benchmark">Google Benchmark C++ library</a>.</p>
-<p>The main function to interact with now is <code>create_range_log</code>, which reproduces the <code>Range</code> behavior of benchmark (<a href="https://github.com/google/benchmark/blob/main/docs/user_guide.md#passing-arguments">see here</a>).</p>
+<p>The main function to interact with now is <code>create_range_exp</code>, which reproduces the <code>Range</code> behavior of benchmark (<a href="https://github.com/google/benchmark/blob/main/docs/user_guide.md#passing-arguments">see here</a>).</p>
 <p><code>BENCHMARK(BM_memcpy)-&gt;RangeMultiplier(2)-&gt;Range(8, 8&lt;&lt;10);</code> can be specified with “ranges” by:</p>
-<pre><code>&gt; ranges::create_range_log(lo = 8, hi = bitwShiftL(a = 8, n = 10), mult = 2)
+<pre><code>&gt; ranges::create_range_exp(lo = 8, hi = bitwShiftL(a = 8, n = 10), mult = 2)
  [1]    8   16   32   64  128  256  512 1024 2048 4096 8192</code></pre>
 </div>
   </div>
