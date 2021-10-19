@@ -83,7 +83,7 @@ add_negated_powers <- function(lo, hi, mult = 8) {
 }
 
 
-#' @title Create a logarithmic range of integers
+#' @title Create a exponential range of integers
 #' @description Create a range from the powers of `mult` on the closed interval \[`lo`, `hi`\].
 #' The endpoints are included, even if they are not multiples of `mult`. The range
 #' may go from negative to positive values if requested.
@@ -94,9 +94,9 @@ add_negated_powers <- function(lo, hi, mult = 8) {
 #' @param hi top of the interval
 #' @param mult multiplier
 #' @param exclude_zero include `0` in the interval or not
-#' @examples create_range_log(lo = 8, hi = bitwShiftL(a = 8, n = 10), mult = 2)
+#' @examples create_range_exp(lo = 8, hi = bitwShiftL(a = 8, n = 10), mult = 2)
 #' @export
-create_range_log <- function(lo, hi, mult = 8, exclude_zero = FALSE) {
+create_range_exp <- function(lo, hi, mult = 8, exclude_zero = FALSE) {
 
   stopifnot(length(c(lo, hi, mult)) == 3)
   stopifnot(all(is.finite(c(lo, hi, mult))))

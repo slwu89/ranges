@@ -2,4 +2,4 @@
 
 export(add_negated_powers)
 export(add_powers)
-export(create_range_log)
+export(create_range_exp)

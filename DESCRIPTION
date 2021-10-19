@@ -9,7 +9,7 @@ Authors@R:
            comment = c(ORCID = "0000-0002-5781-9493")))
 Description: Gives users tools to Make integer ranges for benchmarking algorithms, especially for numerical or 
   scientific computing, that need to be tested on arguments ranging over several
-  orders of magnitude. It can generate dense (linear) or sparse (logarithmic) ranges
+  orders of magnitude. It can generate dense (linear) or sparse (exponential) ranges
   and is designed to be used to generate input for benchmarking packages.
 License: MIT + file LICENSE
 Encoding: UTF-8
